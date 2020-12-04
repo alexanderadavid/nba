@@ -10,6 +10,7 @@ template.parameters.forEach(function (param) {
 });
 
 const transformMap = {
+  gameRotation: general,
   playerProfile:  general,
   playerInfo: general,
   playersInfo: players,
