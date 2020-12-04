@@ -48,6 +48,7 @@ const game = {GameID: "0021401082"};
 
 describe("nba stats methods", function () {
 
+  it("#gameRotation", callMethod("gameRotation", {GameID: "0021401082", LeagueID: "00"}))
   it("#playerProfile", callMethod("playerProfile", steph));
   it("#playerInfo", callMethod("playerInfo", steph));
   it("#playersInfo", callMethod("playersInfo"));
