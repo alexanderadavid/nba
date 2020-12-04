@@ -32,6 +32,11 @@ describe("stats methods", function () {
 
   before(() => stats = stats.withTransport(jsonStub));
 
+  describe("#gameRotation()", () => {
+    it("should issue a request to the correct URL", () => stats.gameRotation({GameID: 1234}).then(() => expect(lastUrlEq("http://stats.nba.com/stats/gamerotation")).toEqual(true)));
+    it("should issue a request with the correct params", () => stats.gameRotation({GameID: 1234}).then(() => expect(lastCalledWithOption("GameID", 1234)).toEqual(true)));
+  });
+
   describe("#playerProfile()", () => {
     it("should issue a request to the correct URL", () => stats.playerProfile({PlayerID: 1234}).then(() => expect(lastUrlEq("http://stats.nba.com/stats/playerprofilev2")).toEqual(true)));
     it("should issue a request with the correct params", () => stats.playerProfile({PlayerID: 1234}).then(() => expect(lastCalledWithOption("PlayerID", 1234)).toEqual(true)));
