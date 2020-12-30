@@ -47,9 +47,14 @@ describe("stats methods", function () {
     it("should issue a request with the correct params", () => stats.playerInfo({PlayerID: 1}).then(() => expect(lastCalledWithOption("PlayerID", 1)).toEqual(true)));
   });
 
-  describe("#playerSplits()", () => {
-    it("should issue a request to the correct URL", () => stats.playerSplits({PlayerID: 2}).then(() => expect(lastUrlEq("http://stats.nba.com/stats/playerdashboardbygeneralsplits")).toEqual(true)));
-    it("should issue a request with the correct params", () => stats.playerSplits({PlayerID: 2}).then(() => expect(lastCalledWithOption("PlayerID", 2)).toEqual(true)));
+  describe("#generalSplits()", () => {
+    it("should issue a request to the correct URL", () => stats.generalSplits({PlayerID: 2}).then(() => expect(lastUrlEq("http://stats.nba.com/stats/playerdashboardbygeneralsplits")).toEqual(true)));
+    it("should issue a request with the correct params", () => stats.generalSplits({PlayerID: 2}).then(() => expect(lastCalledWithOption("PlayerID", 2)).toEqual(true)));
+  });
+
+  describe("#yearSplits()", () => {
+    it("should issue a request to the correct URL", () => stats.yearSplits({PlayerID: 2}).then(() => expect(lastUrlEq("http://stats.nba.com/stats/playerdashboardbyyearoveryear")).toEqual(true)));
+    it("should issue a request with the correct params", () => stats.yearSplits({PlayerID: 2}).then(() => expect(lastCalledWithOption("PlayerID", 2)).toEqual(true)));
   });
 
   describe("#playersInfo()", () => {

@@ -51,11 +51,14 @@ describe("nba stats methods", function () {
   it("#gameRotation", callMethod("gameRotation", {GameID: "0021401082", LeagueID: "00"}))
   it("#playerProfile", callMethod("playerProfile", steph));
   it("#playerInfo", callMethod("playerInfo", steph));
+  it("#playerInfo", callMethod("playerInfo", steph));
   it("#playersInfo", callMethod("playersInfo"));
+  it("#playerIndex", callMethod("playerIndex", steph));
   it("#teamStats", callMethod("teamStats"));
   it("#teamSplits", callMethod("teamSplits", dubs));
   it("#teamYears", callMethod("teamYears"));
-  it("#playerSplits", callMethod("playerSplits", steph));
+  it("#generalSplits", callMethod("generalSplits", steph));
+  it("#yearSplits", callMethod("yearSplits", steph));
   it("#shots", callMethod("shots", dubs));
   it("#scoreboard", callMethod("scoreboard", {gameDate: "03/27/2015"})); // response says "GameDate is required" but it doesn't seem to work with uppercase first letter unlike every other parameter -- WTF.
   it("#playByPlay", callMethod("playByPlay", game));
@@ -71,6 +74,10 @@ describe("nba stats methods", function () {
   it("#playerClutch", callMethod("playerClutch", {ClutchTime: "Last 5 Minutes", AheadBehind: "Ahead or Behind", PointDiff: 5}));
   it("#teamClutch", callMethod("teamClutch", {ClutchTime: "Last 5 Minutes", AheadBehind: "Ahead or Behind", PointDiff: 5}));
   it("#playerShooting", callMethod("playerShooting"));
+  it("#playerBioStats", callMethod("playerBioStats"));
+  it("#playerDefense", callMethod("playerDefense"));
+  it("#playerPlayType", callMethod("playerPlayType"));
+  it("#playerShotLocations", callMethod("playerShotLocations"));
   it("#teamShooting", callMethod("teamShooting"));
   it("#boxScoreSummary", callMethod("boxScoreSummary", game));
   it("#boxScore", callMethod("boxScore", game));

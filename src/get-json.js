@@ -32,6 +32,7 @@ module.exports = function getJson (_url, query, _options = {}) {
       if (resp.ok) return resp.json();
 
       return resp.text().then(function (text) {
+        console.error(`Error with request ${urlStr}`)
         throw new Error(`${resp.status} ${resp.statusText} – ${text}`);
       });
     });

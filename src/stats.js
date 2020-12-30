@@ -13,11 +13,13 @@ const transformMap = {
   gameRotation: general,
   playerProfile:  general,
   playerInfo: general,
+  playerIndex: general,
   playersInfo: players,
   teamStats: base,
   teamSplits: general,
   teamYears: base,
-  playerSplits: general,
+  generalSplits: general,
+  yearSplits: general,
   shots: general,
   scoreboard: general,
   playByPlay: general,
@@ -33,6 +35,8 @@ const transformMap = {
   playerClutch: general,
   teamClutch: general,
   playerShooting: general,
+  playerPlayType: general,
+  playerDefense: general,
   teamShooting: general,
   teamPlayerOnOffDetails: general,
   playerCompare: general,
@@ -42,6 +46,9 @@ function makeStatsMethod (endpoint, transport) {
 
   const defaults = {};
   endpoint.parameters.forEach(function (param) {
+    if (!paramMap[param]) {
+      throw new Error(`missing param '${param}', endpoint ${endpoint.name}`)
+    }
     defaults[param] = paramMap[param].default;
   });
 
